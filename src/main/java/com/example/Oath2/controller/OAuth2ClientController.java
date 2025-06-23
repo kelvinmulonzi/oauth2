@@ -2,17 +2,17 @@ package com.example.Oath2.controller;
 
 import com.example.Oath2.dto.OAuth2ClientDto;
 import com.example.Oath2.dto.OAuth2ClientResponseDto;
-import com.nimbusds.oauth2.sdk.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
+import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
+import com.example.Oath2.dto.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Duration;
@@ -41,7 +41,7 @@ public class OAuth2ClientController {
                     .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                     .redirectUris(uris -> uris.addAll(clientDto.getRedirectUris()))
                     .scopes(scopes -> scopes.addAll(clientDto.getScopes()))
-                    .clientSettings(ClientRegistration.ClientSettings.builder()
+                    .clientSettings(ClientSettings.builder()
                             .requireAuthorizationConsent(true)
                             .build())
                     .tokenSettings(TokenSettings.builder()

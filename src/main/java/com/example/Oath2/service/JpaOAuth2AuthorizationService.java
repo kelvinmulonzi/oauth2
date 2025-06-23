@@ -124,7 +124,7 @@ public class JpaOAuth2AuthorizationService implements OAuth2AuthorizationService
         // Build access token
         if (entity.getAccessTokenValue() != null) {
             OAuth2AccessToken accessToken = new OAuth2AccessToken(
-                    OAuth2AccessToken.TokenType.valueOf(entity.getAccessTokenType().toUpperCase()),
+                    OAuth2AccessToken.TokenType.BEARER,
                     entity.getAccessTokenValue(),
                     entity.getAccessTokenIssuedAt(),
                     entity.getAccessTokenExpiresAt(),

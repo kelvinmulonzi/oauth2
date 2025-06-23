@@ -1,7 +1,7 @@
 package com.example.Oath2.entities;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 @Table(name = "users")

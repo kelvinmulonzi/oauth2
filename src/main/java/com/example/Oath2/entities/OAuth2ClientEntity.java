@@ -1,16 +1,16 @@
 package com.example.Oath2.entities;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
-Entity
-@Table(name = "oauth2_clients")
+@Entity
+@Table (name = "oauth2_clients")
 public class OAuth2ClientEntity {
     @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String clientId;
 
     @Column(nullable = false)

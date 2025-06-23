@@ -1,6 +1,6 @@
 package com.example.Oath2.dto;
 
-class UserRegistrationDto {
+public class UserRegistrationDto {
     private String username;
     private String password;
     private String email;
@@ -23,7 +23,7 @@ class UserRegistrationDto {
     public void setEmail(String email) { this.email = email; }
 }
 
-class UserResponseDto {
+public class UserResponseDto {
     private Long id;
     private String username;
     private String email;
@@ -46,7 +46,7 @@ class UserResponseDto {
     public void setEmail(String email) { this.email = email; }
 }
 
-class ErrorResponse {
+public class ErrorResponse {
     private String message;
 
     public ErrorResponse() {}
